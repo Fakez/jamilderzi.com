@@ -21,15 +21,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <link rel="icon" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <Script
-          id="analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: 'if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"drzjamil@gmail.com",utcoffset:"-3"}))};sessionStorage.setItem("_swa","1");'
-          }}
-        />
-        <script></script>
       </Head>
+
+      <Script
+        id="analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,user:"drzjamil@gmail.com",utcoffset:"-3"}))};sessionStorage.setItem("_swa","1");`
+        }}>
+      </Script>
 
       <Header />
       <main className=''>

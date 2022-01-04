@@ -25,7 +25,7 @@ const TechStackSection = () => {
       <Paragraph text={'Frontend: HTML, CSS, Javascript, React, Next.js'} />
       <Paragraph text={'Backend: Django, Ruby on Rails, Node.js'} />
       <Paragraph text={`${t('home:databases')}: PostgreSQL, MongoDB`} />
-      <Paragraph text={`${t('home:tools')}: Git, Docker`} />
+      <Paragraph text={`${t('home:tools')}: Git, Docker, Heroku, AWS`} />
     </section>
   );
 }

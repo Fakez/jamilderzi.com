@@ -17,7 +17,7 @@ const Header = () => {
           <a className="hover:opacity-60 capitalize">English</a>
         </Link>
         <span> | </span>
-        <Link href='/pt-BR' locale='pt-BR'>
+        <Link href='/' locale='pt-BR'>
           <a className="hover:opacity-60 capitalize">Português</a>
         </Link>
       </div>

@@ -7,8 +7,8 @@ const Header = () => {
   const { t } = useTranslation();
 
   return (
-    <header className='flex flex-col items-center my-20 xl:justify-center'>
-      <h1 className='flex flex-col gap-4 xl:text-center'>
+    <header className='flex flex-col items-left my-12 xl:my-16 xl:items-center xl:justify-center xl:text-center'>
+      <h1 className='flex flex-col gap-4'>
         <span className='text-5xl font-extrabold xl:text-7xl'>Jamil Derzi</span>
         <p className='text-2xl font-bold xl:text-3xl'>{t('common:header-subtitle')}</p>
       </h1>

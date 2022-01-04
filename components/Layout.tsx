@@ -9,7 +9,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <>
       <Head>
         <meta charSet="UTF-8" />
         <title>{t('common:title')}</title>
@@ -23,12 +23,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       </Head>
 
       <Header />
-      <main>
+      <main className=''>
         {children}
       </main>
-      <ScrollToTopButton />
       <Footer />
+      <ScrollToTopButton />
 
-    </div>
+    </>
   )
 }

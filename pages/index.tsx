@@ -1,11 +1,13 @@
 import type { NextPage } from 'next'
-import React from "react";
+import Image from 'next/image';
+import React, { useState } from "react";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from "react-i18next";
 
 import Heading from '../components/Heading';
 import Paragraph from '../components/Paragraph';
 import SiteLink from '../components/SiteLink'
+import ProjectLink from '../components/ProjectLink';
 
 export async function getStaticProps({ locale }: any) {
   return {
@@ -57,13 +59,91 @@ const LinksSection = () => {
   )
 }
 
+const ProjectsSection = ({ setModalIsOpen, setCurrentImgPath }: 
+  {
+    setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>,
+    setCurrentImgPath: React.Dispatch<React.SetStateAction<string>>
+  }) => {
+  const { t } = useTranslation();
+
+  return (
+    <section className='my-10'>
+      <Heading text={"Cool projects I've worked on"} />
+      <ProjectLink 
+        text={'Dynasty Website'}
+        description='Next.js + Typescript + Tailwind CSS + Django'
+        imgPath={'/images/dynasty-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+      <ProjectLink 
+        text={'Dynasty OTC App'}
+        description='Ruby on Rails'
+        imgPath={'/images/otc-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+      <ProjectLink 
+        text={'Dynasty BI Dashboards'}
+        description='Next.js + Django + Google Cloud Functions + Power BI'
+        imgPath={'/images/dynasty-dashboards-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+      <ProjectLink 
+        text={'Contas de Fadas Ecommerce'}
+        description="Next.js + Sanity CMS (Made in cooperation with <a href='https://jpkiyoshi.tech/'>JP Kiyoshi</a>)"
+        imgPath={'/images/contas-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+      <ProjectLink 
+        text={'Jack Vartanian Ecommerce'}
+        description='HTML + CSS + Javascript + Vtex + Django'
+        imgPath={'/images/jv-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+      <ProjectLink 
+        text={'JV Toolbox'}
+        description='React + Django'
+        imgPath={'/images/jvtoolbox-desktop.jpg'}
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+        />
+    </section>
+  )
+}
+
+const ProjectsModal = ({ imgPath, setModalIsOpen }:
+   {
+     imgPath: string,
+     setModalIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+   }) => {
+  return (
+    <>
+      <div onClick={()=> setModalIsOpen(false)} className='fixed top-0 bottom-0 left-0 bg-black min-h-full min-w-full opacity-60'></div>
+      <div className='centered-modal fixed w-11/12 top-1/2 left-1/2 bg-light-green p-1 rounded xl:w-8/12'>
+        <img className='rounded' src={imgPath}></img>
+      </div>
+    </>
+  )
+}
 
 const Home: NextPage = () => {
 
+  const [modalIsOpen, setModalIsOpen] = useState(true);
+  const [currentImgPath, setCurrentImgPath] = useState('/images/contas-desktop.jpg');
+
   return (
     <>
+      { modalIsOpen && <ProjectsModal imgPath={currentImgPath} setModalIsOpen={setModalIsOpen} /> }
       <TechStackSection />
       <ExperienceSection />
+      <ProjectsSection 
+        setModalIsOpen={setModalIsOpen} 
+        setCurrentImgPath={setCurrentImgPath} 
+      />
       <LinksSection />
     </>
   )

@@ -14,6 +14,19 @@ body {
   @apply xl:m-auto;
 }
 
+main p, main a {
+  @apply my-5;
+}
+
+main a {
+  @apply underline;
+  @apply cursor-pointer;
+}
+
+.centered-modal {
+  transform: translate(-50%, -50%);
+}
+
 ::selection {
 	color: #fff;
 	background: #498868;

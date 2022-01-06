@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className='flex flex-col items-left my-12 xl:my-16 xl:items-center xl:justify-center xl:text-center'>
       <h1 className='flex flex-col gap-4 text-5xl font-extrabold xl:text-6xl'>
-        Jamil Derzi <span className='block text-2xl font-bold'>{t('common:header-subtitle')}</span>
+        Jamil Derzi <span className='block text-xl font-bold xl:text-2xl'>{t('common:header-subtitle')}</span>
       </h1>
       <div className="my-5 text-sm">
         <Link href='/' locale='en'>

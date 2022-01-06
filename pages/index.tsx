@@ -124,7 +124,7 @@ const ProjectsModal = ({ imgPath, setModalIsOpen }:
     <>
       <div onClick={()=> setModalIsOpen(false)} className='fixed top-0 bottom-0 left-0 bg-black min-h-full min-w-full opacity-60'></div>
       <div className='centered-modal fixed w-11/12 top-1/2 left-1/2 bg-light-green p-1 rounded xl:w-8/12'>
-        <img className='rounded' src={imgPath}></img>
+        <img className='rounded w-full' src={imgPath}></img>
       </div>
     </>
   )

@@ -68,7 +68,7 @@ const ProjectsSection = ({ setModalIsOpen, setCurrentImgPath }:
 
   return (
     <section className='my-10'>
-      <Heading text={"Cool projects I've worked on"} />
+      <Heading text={t('home:projects-title')} />
       <ProjectLink 
         text={'Dynasty Website'}
         description='Next.js + Typescript + Tailwind CSS + Django'
@@ -92,7 +92,7 @@ const ProjectsSection = ({ setModalIsOpen, setCurrentImgPath }:
         />
       <ProjectLink 
         text={'Contas de Fadas Ecommerce'}
-        description="Next.js + Sanity CMS (Made in cooperation with <a href='https://jpkiyoshi.tech/'>JP Kiyoshi</a>)"
+        description={t('home:project-contas-desc')}
         imgPath={'/images/contas-desktop.jpg'}
         setModalIsOpen={setModalIsOpen} 
         setCurrentImgPath={setCurrentImgPath} 
@@ -132,8 +132,8 @@ const ProjectsModal = ({ imgPath, setModalIsOpen }:
 
 const Home: NextPage = () => {
 
-  const [modalIsOpen, setModalIsOpen] = useState(true);
-  const [currentImgPath, setCurrentImgPath] = useState('/images/contas-desktop.jpg');
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentImgPath, setCurrentImgPath] = useState('');
 
   return (
     <>

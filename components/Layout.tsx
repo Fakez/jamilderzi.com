@@ -17,7 +17,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:title" content={t('common:title')} />
         <meta name="description" content={t('common:meta-description')} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/meta-image.jpg" />
+        <meta property="og:image" content="/images/meta-image-1.jpg" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

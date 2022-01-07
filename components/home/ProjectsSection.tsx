@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 
+import Section from "../Section";
 import Heading from "../Heading";
 import ProjectLink from "../ProjectLink";
 
@@ -45,7 +46,7 @@ const ProjectsSection = ({ setModalIsOpen, setCurrentImgPath }:
   
     return (
   
-      <section className='my-10'>
+      <Section>
         <Heading text={t('home:projects-title')} />
         
         { projects.map(project => (
@@ -58,7 +59,7 @@ const ProjectsSection = ({ setModalIsOpen, setCurrentImgPath }:
           />
         )) }
   
-      </section>
+      </Section>
     )
 }
 

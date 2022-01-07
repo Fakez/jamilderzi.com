@@ -123,10 +123,10 @@ const ProjectsModal = ({ imgPath, modalIsOpen, setModalIsOpen }:
    }) => {
   return (
     <div className={modalIsOpen ? 'visible' : 'hidden'}>
-      <div onClick={()=> setModalIsOpen(false)} className='fixed top-0 bottom-0 left-0 bg-black min-h-full min-w-full opacity-60'></div>
-      <div className='centered-modal fixed w-11/12 h-fit top-1/2 left-1/2 bg-light-green p-1 rounded xl:w-8/12' style={{minHeight: '10vh'}}>
+      <div onClick={()=> setModalIsOpen(false)} className='fixed top-0 bottom-0 left-0 bg-black min-h-full min-w-full opacity-70 cursor-pointer'></div>
+      <div className='centered-modal fixed w-11/12 h-fit top-1/2 left-1/2 xl:w-9/12' style={{minHeight: '10vh'}}>
         <div className='relative flex items-center justify-center'>
-          <img className='rounded w-full z-20' src={imgPath}></img>
+          <img className='w-full' src={imgPath}></img>
         </div>
         {/* <Image
           src={imgPath}

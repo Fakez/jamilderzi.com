@@ -5,6 +5,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+	color: #fff;
+	background: #498868;
+}
+
 body {
   font-family: 'JetBrains Mono', monospace;
   @apply bg-dark-green;
@@ -27,14 +32,26 @@ main a {
   transform: translate(-50%, -50%);
 }
 
-::selection {
-	color: #fff;
-	background: #498868;
+.centered-modal img {
+  min-height: 33vh;
 }
 
-@media (min-width:1025px) {
-  .container  {
-    max-width: 85vw;
-  	margin: auto;
+@media (max-width:1025px) {
+  .centered-modal img {
+    min-height: 15vh;
+  }
+}
+
+.skeleton {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+
+  100% {
+    @apply bg-light-green
   }
 }

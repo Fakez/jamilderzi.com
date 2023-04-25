@@ -10,9 +10,27 @@ const ExperienceSection = () => {
     return (
       <Section>
         <Heading text={t('home:experience')} />
-        <Paragraph text={t('home:experience1')} />
-        <Paragraph text={t('home:experience2')} />
+        <Paragraph text={t('home:experience5')} />
+        <div className="text-sm ml-5">
+          <p>{t('home:experience5-stack')}</p>
+          <p>{t('home:experience5-text')}</p>
+        </div>
+        <Paragraph text={t('home:experience4')} />
+        <div className="text-sm ml-5">
+          <p>{t('home:experience4-stack')}</p>
+          <p>{t('home:experience4-text')}</p>
+        </div>
         <Paragraph text={t('home:experience3')} />
+        <div className="text-sm ml-5">
+          <p>{t('home:experience3-stack')}</p>
+          <p>{t('home:experience3-text')}</p>
+        </div>
+        {/* <Paragraph text={t('home:experience2')} /> */}
+        <Paragraph text={t('home:experience1')} />
+        <div className="text-sm ml-5">
+          <p>{t('home:experience1-stack')}</p>
+          <p>{t('home:experience1-text')}</p>
+        </div>
       </Section>
     );
 }
